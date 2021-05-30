@@ -7,7 +7,7 @@ const seoul = ['김영훈', '김윤수', '김동욱', '강대위', '김영준',
   '김민기', '김그루', '김희지'];
 
 // 여기에 코드를 작성해 주세요.
-const notKims = 
+const notKims = seoul.filter((el) => el[0] !== '김');
 
 // 테스트 코드
-console.log(notKims);
+console.log(notKims); // [ '강대위', '손효준', '최영준', '이승욱', '윤하은', '서상원' ]
