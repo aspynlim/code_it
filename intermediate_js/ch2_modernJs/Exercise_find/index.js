@@ -20,7 +20,7 @@ function findEmail() {
   const phoneValue = phoneInput.value;
 
   // 여기에 코드를 작성해 주세요.
-  const user ;
+  const user = data.find((name) => ((name.userName === nameValue) && (name.phoneNumber === phoneValue)));
 
   const message = user
     ? `${user.userName}님의 이메일은 ${user.email} 입니다.`
