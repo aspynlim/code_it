@@ -18,3 +18,25 @@ const data = [{
 ];
 
 // 여기에 코드를 작성해 주세요.
+data.forEach((content, i) => {
+  const add = document.createElement('li');
+  add.classList.add('item');
+  add.textContent = `${i+1}. ${content.title}`;
+
+  if(content.isClear){
+    add.classList.add('done');
+  }
+
+  list.append(add);
+});
+
+const text = document.querySelectorAll('.item');
+text.forEach(function(el){
+  el.addEventListener('click', function(){
+    if(el.classList.contains('done')){
+      el.classList.remove('done');
+    } else {
+      el.classList.add('done');
+    }
+  });
+});
