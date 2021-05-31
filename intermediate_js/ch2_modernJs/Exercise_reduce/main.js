@@ -8,6 +8,12 @@ const data = [
 	{ company: 'Microhard', month: 17 },
 ];
 
-const totalCareer = 
+const totalCareer = data.reduce((acc, el) => {
+  const { month } = el;
+  acc += month;
+  return acc;
+}, 0);
+
+// const totalCareer = data.reduce((acc, el) => acc + el.month, 0);
 
 console.log(`상원이의 경력은 총 ${totalCareer}개월입니다.`);
