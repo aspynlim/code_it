@@ -1,5 +1,5 @@
 // list를 import해 주세요.
-
+import { list } from './tags.js';
 
 function reloadMenu(data) {
   list.innerHTML = '';

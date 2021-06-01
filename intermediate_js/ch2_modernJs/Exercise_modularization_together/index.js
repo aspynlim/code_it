@@ -1,7 +1,7 @@
 import { addMenu } from './add.js';
 import { deleteMenu } from './delete.js';
 // addBtn, addInput, list 를 import해 주세요.
-
+import { addBtn, addInput, list } from './tags.js';
 
 const data = [];
 

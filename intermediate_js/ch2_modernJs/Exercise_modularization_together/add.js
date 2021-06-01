@@ -1,5 +1,5 @@
 // addInput, list를 import해 주세요.
-
+import { addInput, list } from './tags.js';
 
 function add(data) {
   const inputValue = addInput.value;
