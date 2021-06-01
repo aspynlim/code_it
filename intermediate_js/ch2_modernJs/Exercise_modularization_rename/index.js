@@ -1,6 +1,6 @@
 import { addMenu } from './add.js';
 // 여기에 코드를 작성해 주세요.
-
+import { deleteMenuByIndex as deleteMenu } from './delete.js';
 
 const data = [];
 const addBtn = document.querySelector('.add-btn');
