@@ -1,8 +1,6 @@
 import { addBtn, addInput, list, rollBtn } from './tags.js';
 // 여기에 코드를 작성해 주세요.
-import { default as rollMenu } from './roll.js';
-import { default as deleteMenu } from './delete.js';
-import { default as addMenu } from './add.js';
+
 
 const data = [];
 
