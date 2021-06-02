@@ -1,8 +1,8 @@
-function BankAccount(name, balance) {
-  let _balance = balance;
-  const user = {
-    name,
+function BankAccount(name, money) {
+  const holder = name;
+  let _balance = money;
 
+  const account = {
     get balance() {
       return _balance;
     },
@@ -15,7 +15,7 @@ function BankAccount(name, balance) {
       }
     }
   };
-  return user;
+  return account;
 }
 
 const account1 = new BankAccount('Michael', 10000);
