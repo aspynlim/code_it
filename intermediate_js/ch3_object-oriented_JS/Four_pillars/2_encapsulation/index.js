@@ -8,11 +8,12 @@ class User {
   };
 };
 
-const user1 = new User('chris123@google.com', '1992-03-21');
+const user1 = new User('smith@google.com', '1992-03-21');
 
-console.log(user1.email); // chris123@google.com
+console.log(user1.email); // smith@google.com
 
 user1.email = 'Chris Robert';
 
 console.log(user1);
 console.log(user1.email); // Chris Robert
+// 이메일 형식이 아닌데도 수정이 됨
