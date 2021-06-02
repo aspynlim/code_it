@@ -8,6 +8,14 @@ class BankAccount {
     return this._balance;
   }
 
+  set balance(money){
+    if(money >= 0){
+      this._balance = money;
+    } else {
+      console.log('You cannnot set negative number for balance');
+    }
+  }
+
   deposit(money) {
     this.balance += money;
   }
@@ -33,4 +41,6 @@ class BankAccount {
 
 const account1 = new BankAccount('Michael', 10000);
 account1.balance = 20000;
+console.log(account1.balance);
+console.log(account1._balance);
 account1.balance = -5000;
