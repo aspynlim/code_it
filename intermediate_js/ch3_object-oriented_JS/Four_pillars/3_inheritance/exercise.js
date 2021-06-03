@@ -39,12 +39,24 @@ class BankAccount {
   }
 }
 
-class SavingsAccount {
-  // 여기에 코드를 작성하세요
+class SavingsAccount extends BankAccount {
+  constructor(name, money, years = 0){
+    super(name, money);
+    this.years = years;
+  }
+  addInterest(rate) {
+    this.balance *= (1 + (rate * this.years));
+  }
 }
 
-class DonationAccount {
-  // 여기에 코드를 작성하세요
+class DonationAccount extends BankAccount {
+  constructor(name, money, rate){
+    super(name, money);
+    this.rate = rate;
+  }
+  donate() {
+    this.balance *= (1 - this.rate);
+  } 
 }
 
 const sa1 = new SavingsAccount('Kate', 50000);
@@ -61,4 +73,4 @@ sa1.addInterest(0.07);
 da1.donate();
 
 console.log(Math.floor(sa1.balance));
-console.log(Math.floor(da1.balanace));
+console.log(Math.floor(da1.balance));
