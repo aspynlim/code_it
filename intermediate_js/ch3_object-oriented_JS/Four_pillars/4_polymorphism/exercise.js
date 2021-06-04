@@ -49,7 +49,7 @@ class SavingsAccount extends BankAccount {
     this.balance *= (1 + (rate * this.years));
   }
   
-  give(money, anotherAccount) {
+  transfer(money, anotherAccount) {
     super.transfer(money, anotherAccount);
     this.balance -= money * 0.005;
   }
@@ -65,7 +65,7 @@ class DonationAccount extends BankAccount {
     this.balance *= (1 - this.rate);
   }
 
-  send(money, anotherAccount) {
+  transfer(money, anotherAccount) {
     super.transfer(money, anotherAccount);
     this.balance -= money * 0.002;
   }
@@ -78,13 +78,26 @@ const sa2 = new SavingsAccount('Alice', 9000000);
 
 const accountForVacation = new BankAccount('Vacation', 0);
 
-ba1.transfer(800000, accountForVacation);
-sa1.give(800000, accountForVacation);
-da1.send(800000, accountForVacation);
-sa2.give(800000, accountForVacation);
+const accounts = [ba1, sa1, da1, sa2];
 
-console.log(ba1.balance);
-console.log(sa1.balance);
-console.log(da1.balance);
-console.log(sa2.balance);
+accounts.forEach((account) => {
+  account.transfer(800000, accountForVacation);
+  console.log(account.balance);
+});
+
+/*
+for(account of accounts) {
+  account.transfer(800000, accountForVacation);
+  console.log(account.balance);
+}
+*/
+
 console.log(accountForVacation.balance);
+
+/*
+19200000
+9196000
+29198400
+8196000
+3200000
+*/
