@@ -36,7 +36,14 @@ const users = [user1, pUser1];
 
 users.forEach((user) => {
   user.buy(item);
+  console.log(user instanceof PremiumUser);
+  console.log(user instanceof User);
 });
 
 // jen@gmail.com buys sweater.
+// false
+// true
+
 // test@gmail.com buys sweater with a 5% discount.
+// true
+// true
