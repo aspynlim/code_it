@@ -16,14 +16,14 @@ function removeUnnecessaryInfo(users) {
 }
 
 fetch('https://jsonplaceholder.typicode.com/users')
-  .finally(() => {
-    console.log('This job will be done by server soon!');
-  })
+  .then((response) => response.json())
   .then((result) => removeUnnecessaryInfo(result))
-  .catch((error) => {
-    console.log(error);
-  })
   .then((result) => {
     console.log(result);
   })
-  .then((response) => response.json());
+  .catch((error) => {
+    console.log(error);
+  })
+  .finally(() => {
+    console.log('This job will be done by server soon!');
+  });
