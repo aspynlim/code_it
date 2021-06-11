@@ -8,7 +8,7 @@ function pick(menus) {
         const randomIdx = Math.floor(Math.random() * menus.length);
         const selectedMenu = menus[randomIdx];
         // 여기에 코드를 작성하세요.
-       
+        return resolve(selectedMenu);
       }, 1000); // 시간이 걸리는 걸 시뮬레이션하기 위한 1초입니다.
     }
   });
