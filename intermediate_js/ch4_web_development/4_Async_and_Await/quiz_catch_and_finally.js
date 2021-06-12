@@ -1,0 +1,22 @@
+/* */ function showQuiz() {
+  /* */ {
+    const response = /* */ fetch('https://learn.codeit.kr/api/quiz');
+    const test = /* */ response.json();
+    const yourAnswer = prompt(test.quiz);
+    if (yourAnswer.toLowerCase() === test.answer) {
+      alert(`Good Job, ${test.explanation} => Let\'s learn more with Codeit!`);
+    } else {
+      throw new Error('wrong');
+    }
+  } /* */ (error) {
+    if (error.message === 'wrong') {
+      alert('You need to learn JavaScript with Codeit!');
+    } else {
+      alert('Error');
+    }
+  } /* */ {
+    window.open('https://codeit.kr', '_blank');
+  }
+}
+
+showQuiz();
