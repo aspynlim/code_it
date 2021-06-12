@@ -1,7 +1,13 @@
 async function fetchAndPrint() {
-  const response = await fetch('https://jsonplaceholder.typicode.commm/users');
-  const result = await response.text();
-  console.log(result);
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.commm/users');
+    const result = await response.text();
+    console.log(result);
+  } catch(error){
+    console.log(error);
+  } finally {
+    console.log('exit');
+  }
 }
 
 fetchAndPrint();
