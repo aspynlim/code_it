@@ -14,23 +14,18 @@ function pick(menus) {
   return p;
 }
 
-function getRandomMenu() {
-  console.log('---Please wait!---');
-  return fetch('https://learn.codeit.kr/api/menus')
-    .then((response) => response.text())
-    .then((result) => {
-      const menus = JSON.parse(result);
-      return pick(menus);
-    });
+async function getRandomMenu() {
+  try {
+    console.log('---Please wait!---');
+    const response = await fetch('https://learn.codeit.kr/api/menus');
+    const menus = await response.json();
+    const menu = await pick(menus);
+    console.log(`Today's lunch is ${menu.name}~`);
+  } catch(error){
+    console.log(error.message);
+  } finally {
+    console.log('Random Menu candidates change everyday');
+  }
 }
 
-getRandomMenu()
-  .then((menu) => {
-    console.log(`Today's lunch is ${menu.name}~`);
-  })
-  .catch((error) => {
-    console.log(error.message);
-  })
-  .finally(() => {
-    console.log('Random Menu candidates change everyday');
-  });
+getRandomMenu();
